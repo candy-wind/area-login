@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            background-image: url(/images/login.jpg);
+            background-size: 100% 100%;
+            background-position: center center;
+            overflow: auto;
+        }
+
+        #wrap .logGet {
+            height: 408px;
+            width: 368px;
+            position: absolute;
+            background-color: #FFFFFF;
+            top: 20%;
+            right: 10%;
+        }
+
+        .logGet .logD.logDtip .p1 {
+            display: inline-block;
+            font-size: 28px;
+            margin-top: 30px;
+            width: 86%;
+        }
+        #wrap .logGet .logD.logDtip {
+            width: 86%;
+            border-bottom: 1px solid #ee7700;
+            margin-bottom: 60px;
+            margin-top: 0px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .logGet .lgD img {
+            position: absolute;
+            top: 12px;
+            left: 8px;
+        }
+        .logGet .lgD input {
+            width: 100%;
+            height: 42px;
+            text-indent: 2.5rem;
+        }
+        #wrap .logGet .lgD {
+            width: 86%;
+            position: relative;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #wrap .logGet .logC {
+            width: 86%;
+            margin-top: 0px;
+            margin-right: auto;
+            margin-bottom: 0px;
+            margin-left: auto;
+        }
+
+
+        .title {
+            font-family: 微软雅黑;
+            font-size: 26px;
+            color: black;
+            position: absolute;
+            background-color: white;
+            top: 50%;
+            left: 7%;
+            transform: translate(-50%, -50%);  /* 使用css3的transform来实现 */
+            font-size: 36px;
+            height: 40px;
+            width: 30%;
+        }
+
+        .copyright {
+            font-family: "宋体";
+            color: black;
+            position: absolute;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);  /* 使用css3的transform来实现 */
+            height: 60px;
+            width: 40%;
+            text-align:center;
+        }
+
+
+        #foot .copyright .img {
+            width: 100%;
+            height: 24px;
+            position: relative;
+        }
+        /*.copyright .img .icon {*/
+        /*    display: inline-block;*/
+        /*    width: 24px;*/
+        /*    height: 24px;*/
+        /*    margin-left: 22px;*/
+        /*    vertical-align: middle;*/
+        /*    background-image: url(%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6.png);*/
+        /*    background-repeat: no-repeat;*/
+        /*    vertical-align: middle;*/
+        /*    margin-right: 5px;*/
+        /*}*/
+
+        /*.copyright .img .icon1 {*/
+        /*    display: inline-block;*/
+        /*    width: 24px;*/
+        /*    height: 24px;*/
+        /*    margin-left: 22px;*/
+        /*    vertical-align: middle;*/
+        /*    background-image: url(%E5%9C%B0%E5%9D%80.png);*/
+        /*    background-repeat: no-repeat;*/
+        /*    vertical-align: middle;*/
+        /*    margin-right: 5px;*/
+        /*}*/
+        .copyright .img .icon2 {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 22px;
+            vertical-align: middle;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        #foot .copyright p {
+            height: 24px;
+            width: 100%;
+        }
+        .text{
+            width: 100%;
+            height: 45px;
+            background-color: #ee7700;
+            border: none;
+            color: white;
+            font-size: 100px;
+        }
+        .text2{
+            width: 100%;
+            height: 45px;
+            background-color: #ee7700;
+            border: none;
+            color: white;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id ="wrap">
+        <div class="logGet">
+
+            <div class="logD logDtip">
+                <p class="p1">用户登录</p>
+            </div>
+            <!-- 输入框 -->
+            <div class="lgD">
+                <img src="../images/name.png" width="20" height="20" alt=""/>
+                <input type="text"
+                       placeholder="输入用户名" id="username" name="username"/>
+            </div>
+            <div class="lgD">
+                <img src="../images/pwd.png" width="20" height="20" alt=""/>
+                <input type="password"
+                       placeholder="输入用户密码" id ="password" name="password"/>
+            </div>
+            <div class="logC">
+<!--&lt;!&ndash;             <input type="submit" id="submit"/>&ndash;&gt;-->
+                <button onclick="submit()" lang="zh_CN" bindgetuserinfo="onGotUserInfo"  hover-class='btn_hover'><text class='text'>登陆</text></button>
+                <button onclick="register()" lang="zh_CN" bindgetuserinfo="onGotUserInfo"  hover-class='btn_hover'><text class='text2'>注册</text></button>
+
+            </div>
+<!--            <div class="logC" align="left" style="float:left">-->
+<!--                <input type="button" id="leftButton" onclick="submit()"登陆/>-->
+<!--            </div>-->
+<!--            <div class="logC" align="right">-->
+<!--                <input type="button" id="rightButton" onclick="register()"注册/>-->
+<!--            </div>-->
+
+
+<!--            <h1>用户登陆</h1>-->
+<!--            <img src="../images/name.png" width="20" height="20" alt=""/>-->
+<!--            <input type="text" class="form-control" id="username" name="username"><br>-->
+<!--            <img src="../images/pwd.png" width="20" height="20" alt=""/>-->
+<!--            <input type="password" class="form-control" id="password" name="password"><br>-->
+<!--            <button onclick="submit()">登陆</button><button onclick="register()">注册</button>-->
+
+        </div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    function submit() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        $.post("/user/login",{username:username,password:password},function (res) {
+            if (res.success ===true){
+                alert("登陆成功");
+                window.location.href ="/area.html";
+            } else {
+                alert(res.msg);
+            }
+        })
+
+    }
+    function register() {
+        window.location.href ="/regist.html";
+
+    }
+</script>
+
+
+</html>
